@@ -1,21 +1,13 @@
-import os
-
-REDIRECT_URL = "https://amantvs-new.blogspot.com/2026/02/abc.html"
-
-for root, dirs, files in os.walk("video"):
-    if root == "video":
-        continue
-    index_path = os.path.join(root, "index.html")
-    if not os.path.exists(index_path):
-        with open(index_path, "w", encoding="utf-8") as f:
-            f.write(f"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0; url={REDIRECT_URL}">
+    <meta http-equiv="refresh" content="0; url=https://amantvs-new.blogspot.com/2026/02/abc.html">
+    <script type="text/javascript">
+        window.location.href = "https://amantvs-new.blogspot.com/2026/02/abc.html"
+    </script>
+    <title>Redirecting...</title>
 </head>
 <body>
-<script>
-location.replace("{REDIRECT_URL}");
-</script>
+    If you are not redirected, <a href="https://amantvs-new.blogspot.com/2026/02/abc.html">click here</a>.
 </body>
-</html>""")
+</html>
